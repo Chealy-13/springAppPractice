@@ -26,7 +26,7 @@ public class UserDaoImpl extends MySQLDao implements UserDao {
         boolean added = false;
 
         Connection c = super.getConnection();
-        try (PreparedStatement ps = c.prepareStatement("INSERT INTO users VALUES(?, ?, ?, ?, ?)")) {
+        try (PreparedStatement ps = c.prepareStatement("INSERT INTO users (username, password, firstname, secondname, email) VALUES(?, ?, ?, ?, ?)")) {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getFirstName());
@@ -74,8 +74,8 @@ public class UserDaoImpl extends MySQLDao implements UserDao {
     private static User mapRow(ResultSet rs) throws SQLException {
         return User.builder()
                 .username(rs.getString("username"))
-                .firstName(rs.getString("firstName"))
-                .lastName(rs.getString("lastName"))
+                .firstName(rs.getString("firstname"))
+                .lastName(rs.getString("lastname"))
                 .email(rs.getString("email"))
                 .build();
     }

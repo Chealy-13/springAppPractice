@@ -10,7 +10,7 @@
         <!-- Include the menu bar fragment -->
         <div th:replace="~{fragments/menu :: menu-bar}"></div>
 
-        <form method="get" action="/greet_controller">
+        <form method="get" action="/greet">
             <label for="empId">Employee ID:</label><br>
             <input type="text" name="empId" required><br>
             <input type="submit" value="Get your greeting here...">
