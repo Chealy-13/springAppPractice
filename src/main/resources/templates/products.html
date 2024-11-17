@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <meta charset="UTF-8">
+    <title>Product List</title>
+</head>
+<body>
+<!-- Include the menu bar fragment -->
+<div th:replace="~{fragments/menu :: menu-bar}"></div>
+
+<h1>Product List</h1>
+
+<table th:each="prod : ${products}">
+    <tr>
+        <td>Product Code:</td>
+        <td th:text="${prod.productCode}"></td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td th:text="${prod.productName}"></td>
+    </tr>
+    <tr>
+        <td>Product Line:</td>
+        <td th:text="${prod.productLine}"></td>
+    </tr>
+    <tr>
+        <td>Scale:</td>
+        <td th:text="${prod.productScale}"></td>
+    </tr>
+    <tr>
+        <td>Vendor:</td>
+        <td th:text="${prod.productVendor}"></td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td th:text="${prod.productDescription}"></td>
+    </tr>
+    <tr>
+        <td>Quantity in Stock:</td>
+        <td th:text="${prod.quantityInStock}"></td>
+    </tr>
+    <tr>
+        <td>Buy Price:</td>
+        <td th:text="${prod.buyPrice}"></td>
+    </tr>
+    <tr>
+        <td>MSRP:</td>
+        <td th:text="${prod.msrp}"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><hr></td>
+    </tr>
+</table>
+</body>
+</html>

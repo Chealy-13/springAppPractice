@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Product Index</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+    <div>
+        <!-- Include the menu bar fragment -->
+        <div th:replace="~{fragments/menu :: menu-bar}"></div>
+
+<!--        <form method="get" action="/greet">-->
+<!--            <label for="empId">Employee ID:</label><br>-->
+<!--            <input type="text" name="empId" required><br>-->
+<!--            <input type="submit" value="Get your greeting here...">-->
+<!--        </form>-->
+    </div>
+    <div>
+        <!-- Link to view all products -->
+        <p>View all products <a href="/viewProducts">here</a></p>
+
+    </div>
+
+    <div>
+        <!-- Form to edit a product -->
+        <h2>Edit Product</h2>
+        <form method="post" action="/editProduct">
+            <label for="productCode">Product Code:</label><br>
+            <input type="text" id="productCode" name="productCode" required><br>
+
+            <label for="productName">New Product Name:</label><br>
+            <input type="text" id="productName" name="productName"><br>
+
+            <label for="productDescription">New Product Description:</label><br>
+            <textarea id="productDescription" name="productDescription" rows="4" cols="50"></textarea><br>
+
+            <label for="quantityInStock">Quantity in Stock:</label><br>
+            <input type="number" id="quantityInStock" name="quantityInStock"><br>
+
+            <label for="buyPrice">Buy Price:</label><br>
+            <input type="number" id="buyPrice" name="buyPrice" step="0.01"><br>
+
+            <label for="msrp">MSRP:</label><br>
+            <input type="number" id="msrp" name="msrp" step="0.01"><br>
+
+            <input type="submit" value="Update Product">
+        </form>
+    </div>
+
+    <div>
+        <!-- Form to delete a product -->
+        <h2>Delete Product</h2>
+        <form method="post" action="/deleteProduct">
+            <label for="deleteProductCode">Product Code:</label><br>
+            <input type="text" id="deleteProductCode" name="productCode" required><br>
+            <input type="submit" value="Delete Product">
+        </form>
+    </div>
+
+    </body>
+</html>
